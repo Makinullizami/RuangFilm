@@ -36,15 +36,15 @@ const Home = () => {
   const carouselItems = [
     {
       image:
-        'https://i.pinimg.com/originals/06/08/65/060865904442cb68a717d71d4d97813c.jpg', // Ganti dengan URL gambar Anda
+        'https://i.pinimg.com/originals/06/08/65/060865904442cb68a717d71d4d97813c.jpg',
     },
     {
       image:
-        'https://webneel.com/daily/sites/default/files/images/daily/08-2018/1-india-movie-poster-design-bollywood-padmaavat.jpg', // Ganti dengan URL gambar Anda
+        'https://webneel.com/daily/sites/default/files/images/daily/08-2018/1-india-movie-poster-design-bollywood-padmaavat.jpg',
     },
     {
       image:
-        'http://anniehaydesign.weebly.com/uploads/9/5/4/6/95469676/landscape-poster-2_orig.jpg', // Ganti dengan URL gambar Anda
+        'http://anniehaydesign.weebly.com/uploads/9/5/4/6/95469676/landscape-poster-2_orig.jpg',
     },
   ];
 
@@ -144,7 +144,9 @@ const Home = () => {
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
-            <TouchableOpacity style={styles.salurantrending}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Detail')}
+              style={styles.salurantrending}>
               <Image source={item.image} style={styles.trendingImage} />
             </TouchableOpacity>
           )}
@@ -157,7 +159,9 @@ const Home = () => {
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
-            <TouchableOpacity style={styles.salurantrending}>
+            <TouchableOpacity
+              onPress={() => navigation.navigate('Detail')}
+              style={styles.salurantrending}>
               <Image source={item.image} style={styles.trendingImage} />
             </TouchableOpacity>
           )}
