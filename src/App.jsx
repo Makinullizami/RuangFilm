@@ -17,7 +17,8 @@ const Menu = () => {
   return (
     <Tab.Navigator
       screenOptions={{
-        tabBarActiveTintColor: '#e91e63',
+        tabBarActiveTintColor: '#D50000',
+        tabBarStyle: {backgroundColor: '#333'},
       }}>
       <Tab.Screen
         name="Home"
@@ -79,7 +80,11 @@ const App = () => {
           component={Menu}
           options={{headerShown: false}}
         />
-        <Stack.Screen name="Search" component={Pencarian} />
+        <Stack.Screen
+          name="Search"
+          component={Pencarian}
+          options={{headerShown: false}}
+        />
       </Stack.Navigator>
     </NavigationContainer>
   );
