@@ -8,8 +8,11 @@ import {
 } from 'react-native';
 import React from 'react';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import {useNavigation} from '@react-navigation/native';
 
 const Home = () => {
+  const navigation = useNavigation();
+
   const Kategori = [
     {key: 'Home', label: 'Home'},
     {key: 'Series', label: 'Series'},
@@ -18,31 +21,36 @@ const Home = () => {
     {key: 'Sports', label: 'Sports'},
     {key: 'TV Shows', label: 'TV Shows'},
   ];
+
   return (
-    <View style={styles.container}>
-      <StatusBar backgroundColor="#333" barStyle={'light-content'} />
-      <View style={styles.headerTop}>
-        <Text style={styles.logo}>RuangFilm</Text>
-        <View style={styles.iconsContainer}>
-          <MaterialCommunityIcons name="magnify" size={28} color="#fff" />
-          <MaterialCommunityIcons
-            name="account-circle"
-            size={28}
-            color="#fff"
-          />
+    <View>
+      <View style={styles.container}>
+        <StatusBar backgroundColor="#333" barStyle={'light-content'} />
+        <View style={styles.headerTop}>
+          <Text style={styles.logo}>RUANGFILM</Text>
+          <View style={styles.iconsContainer}>
+            <TouchableOpacity onPress={() => navigation.navigate('Search')}>
+              <MaterialCommunityIcons name="magnify" size={30} color="#fff" />
+            </TouchableOpacity>
+            <MaterialCommunityIcons
+              name="account-circle"
+              size={30}
+              color="#fff"
+            />
+          </View>
         </View>
+        <FlatList
+          data={Kategori}
+          horizontal
+          showsHorizontalScrollIndicator={false}
+          renderItem={({item}) => (
+            <TouchableOpacity style={styles.tab}>
+              <Text style={styles.tabLabel}>{item.label}</Text>
+            </TouchableOpacity>
+          )}
+          keyExtractor={item => item.key}
+        />
       </View>
-      <FlatList
-        data={Kategori}
-        horizontal
-        showsHorizontalScrollIndicator={false}
-        renderItem={({item}) => (
-          <TouchableOpacity style={styles.tab}>
-            <Text style={styles.tabLabel}>{item.label}</Text>
-          </TouchableOpacity>
-        )}
-        keyExtractor={item => item.key}
-      />
     </View>
   );
 };
@@ -58,7 +66,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     padding: 10,
-    elevation: 1,
+    elevation: 3,
   },
   logo: {
     fontSize: 30,

@@ -7,6 +7,7 @@ import Home from './screens/Home';
 import Detail from './screens/Detail';
 import Live from './screens/Live';
 import Profile from './screens/Profile';
+import Pencarian from './screens/Pencarian';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 
 const Stack = createNativeStackNavigator();
@@ -34,7 +35,7 @@ const Menu = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons name="details" color={color} size={size} />
           ),
         }}
       />
@@ -44,7 +45,11 @@ const Menu = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="tooltip-plus-outline"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
@@ -54,7 +59,11 @@ const Menu = () => {
         options={{
           headerShown: false,
           tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="home" color={color} size={size} />
+            <MaterialCommunityIcons
+              name="account-circle"
+              color={color}
+              size={size}
+            />
           ),
         }}
       />
@@ -70,6 +79,7 @@ const App = () => {
           component={Menu}
           options={{headerShown: false}}
         />
+        <Stack.Screen name="Search" component={Pencarian} />
       </Stack.Navigator>
     </NavigationContainer>
   );
