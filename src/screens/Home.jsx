@@ -145,7 +145,9 @@ const Home = () => {
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
             <TouchableOpacity
-              onPress={() => navigation.navigate('Detail')}
+              onPress={() =>
+                navigation.navigate('Detail', {Trending: item.image})
+              }
               style={styles.salurantrending}>
               <Image source={item.image} style={styles.trendingImage} />
             </TouchableOpacity>
@@ -160,7 +162,9 @@ const Home = () => {
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
             <TouchableOpacity
-              onPress={() => navigation.navigate('Detail')}
+              onPress={() =>
+                navigation.navigate('Detail', {Romance: item.image})
+              }
               style={styles.salurantrending}>
               <Image source={item.image} style={styles.trendingImage} />
             </TouchableOpacity>

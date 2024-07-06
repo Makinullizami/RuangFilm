@@ -56,14 +56,14 @@ const Live = () => {
     {key: 'Sports', label: 'Sports'},
     {key: 'TV Shows', label: 'TV Shows'},
   ];
-  const Trending = [
+  const TrendingLive = [
     {key: 'Series', image: k},
     {key: 'Movies', image: l},
     {key: 'Anime', image: m},
     {key: 'Sports', image: n},
     {key: 'TV Shows', image: o},
   ];
-  const Romance = [
+  const RomanceLive = [
     {key: 'Series', image: p},
     {key: 'Movies', image: q},
     {key: 'Anime', image: r},
@@ -140,12 +140,14 @@ const Live = () => {
         />
         <Text style={styles.txtkategori}>Trending Film</Text>
         <FlatList
-          data={Trending}
+          data={TrendingLive}
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
             <TouchableOpacity
-              onPress={() => navigation.navigate('Detail')}
+              onPress={() =>
+                navigation.navigate('Detail', {TrendingLive: item.image})
+              }
               style={styles.salurantrending}>
               <Image source={item.image} style={styles.trendingImage} />
             </TouchableOpacity>
@@ -155,12 +157,14 @@ const Live = () => {
         />
         <Text style={styles.txtkategori}>Romance</Text>
         <FlatList
-          data={Romance}
+          data={RomanceLive}
           horizontal
           showsHorizontalScrollIndicator={false}
           renderItem={({item}) => (
             <TouchableOpacity
-              onPress={() => navigation.navigate('Detail')}
+              onPress={() =>
+                navigation.navigate('Detail', {RomanceLive: item.image})
+              }
               style={styles.salurantrending}>
               <Image source={item.image} style={styles.trendingImage} />
             </TouchableOpacity>
