@@ -31,16 +31,6 @@ const Menu = () => {
         }}
       />
       <Tab.Screen
-        name="Detail"
-        component={Detail}
-        options={{
-          headerShown: false,
-          tabBarIcon: ({color, size}) => (
-            <MaterialCommunityIcons name="details" color={color} size={size} />
-          ),
-        }}
-      />
-      <Tab.Screen
         name="Live"
         component={Live}
         options={{
@@ -83,6 +73,11 @@ const App = () => {
         <Stack.Screen
           name="Search"
           component={Pencarian}
+          options={{headerShown: false}}
+        />
+        <Stack.Screen
+          name="Detail"
+          component={Detail}
           options={{headerShown: false}}
         />
       </Stack.Navigator>

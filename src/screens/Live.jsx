@@ -251,8 +251,8 @@ const styles = StyleSheet.create({
     marginBottom: 20,
   },
   channelImage: {
-    width: 50,
-    height: 50,
+    width: 60,
+    height: 60,
     marginTop: 5,
     marginBottom: 5,
     backgroundColor: '#fff',
